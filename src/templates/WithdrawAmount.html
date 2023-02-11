@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Withdraw Money</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
+		<style>
+			h1{
+                text-align: center;
+                font-size: 50;
+                background-color:rgb(14, 153, 223);
+                -webkit-text-fill-color: aliceblue;
+            }
+
+            body{
+                text-align: center;
+                background-image: url('https://economictimes.indiatimes.com/thumb/msid-70878368,width-1200,height-900,resizemode-4,imgsize-60059/kyc-getty.jpg?from=mdr');
+                background-size: cover;
+                text-decoration-line: initial;
+                font-size: 25px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#"></a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Customers
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/addcustomer">Add Customer</a></li>
+                        <li><a href="/viewcustomers">View Customers</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Money
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/addamount">Add Money</a></li>
+                        <li class="active"><a href="/withdrawmoney">Withdraw Money</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Loans
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/viewloans">View Loans</a></li>
+                        <li><a href="/approveloan">Approve Loan</a></li>
+                        <li class="active"><a href="/rejectloan">Reject Loan</a></li>
+                        <li><a href="/closeloan">Close Loan</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+        </nav>
+        <h1><marquee width="400" behavior="alternate">
+            <font face="Brush Script MT" size="8" color="green"><b><i>Withdraw Amount</i></b>
+            </font>
+            </marquee> <br></h1>
+        <div>
+        <form action="/withdrawmoneyform" method="post">
+            <center>
+            <div class="form-group">
+                <label for="customer">Customer:</label>
+                <input type="text" id="customer" name="customer" required="">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required="">
+            </div>
+            <button type="submit" class="btn btn-primary btn-login" id="login">Withdraw Money</button>
+            </center>
+
+        </form>
+        <span style="color:red"><b>{{err}}</b></span>
+        <span style="color:green"><b>{{res}}</b></span>
+        </div>
+    </body>
+</html>

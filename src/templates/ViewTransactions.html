@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>View Transactions</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+		<style>
+			h1{
+                text-align: center;
+                font-size: 50;
+                background-color:rgb(244, 100, 100);
+                -webkit-text-fill-color: aliceblue;
+            }
+
+            body{
+                text-align: center;
+                background-image: url('https://static.vecteezy.com/system/resources/previews/006/530/988/original/isometric-icon-of-online-money-transfer-digital-transaction-vector.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                text-decoration-line: initial;
+                font-size: 25px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+}
+            </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#"></a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Transaction
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/addtransaction">Add Transaction</a></li>
+                        <li class="active"><a href="/viewtransactions">View Transaction</a></li>
+                        <li><a href="/checkbalance">Check Balance</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Loans
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/addloan">Add Loan</a></li>
+                        <li><a href="/cviewloans">View Loans</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+        </nav>
+        <h1><marquee width="400" behavior="alternate">
+            <font face="Brush Script MT" size="8" color="green"><b><i>View Transactions</i></b>
+            </font>
+            </marquee> <br>
+           </h1>
+           <table border="1" align="center">
+            <tr>
+                <th>Sender</th>
+                <th>Reciever</th>
+                <th>Transaction Amount</th>
+                <th>Transaction Status</th>
+                <th>Transaction Id</th>
+            </tr>
+            {%for i in range(0,len)%}
+                <tr>
+                    <td>{{dashboard_data[i][0]}}</td>
+                    <td>{{dashboard_data[i][1]}}</td>
+                    <td>{{dashboard_data[i][2]}}</td>
+                    <td>{{dashboard_data[i][3]}}</td>
+                    <td>{{dashboard_data[i][4]}}</td>
+                </tr>
+            {%endfor%}
+        </table>
+</body>
+
+
+</html>

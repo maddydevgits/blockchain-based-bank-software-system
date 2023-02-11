@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Login Account</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+		<style>
+			h1{
+                text-align: center;
+                font-size: 50;
+                background-color:rgb(14, 153, 223);
+                -webkit-text-fill-color: aliceblue;
+            }
+
+            body{
+                text-align: center;
+                background-image: url('https://economictimes.indiatimes.com/thumb/msid-70878368,width-1200,height-900,resizemode-4,imgsize-60059/kyc-getty.jpg?from=mdr');
+                background-size: cover;
+                text-decoration-line: initial;
+                font-size: 25px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Blockchain Bank Login</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="/">Login</a></li>
+                <li class="active"><a href="/clogin">Customer Login</a></li>
+              </ul>
+            </div>
+        </nav>
+        <h1><marquee width="400" behavior="alternate">
+            <font face="Brush Script MT" size="8" color="green"><b><i>Login Account</i></b>
+            </font>
+            </marquee> <br></h1>
+        <form action="/logincustomer" method="post">
+            <center>
+            <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username" required="">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required="">
+            </div>
+            <button type="submit" class="btn btn-primary btn-login" id="login">Login</button>
+            </center>
+
+        </form>
+        <span style="color:red"><b>{{err}}</b></span>
+        <span style="color:green"><b>{{res}}</b></span>
+    </body>
+</html>
